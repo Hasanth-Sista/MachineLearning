@@ -1,0 +1,910 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled0.ipynb",
+      "version": "0.3.2",
+      "provenance": [],
+      "collapsed_sections": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "accelerator": "GPU"
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "[View in Colaboratory](https://colab.research.google.com/github/Hasanth-Sista/MachineLearning/blob/master/Demo%20on%20Scikit%20Learn)"
+      ]
+    },
+    {
+      "metadata": {
+        "id": "lJnUcEC18tg7",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 131
+        },
+        "outputId": "1424c835-2e35-47f7-b32e-d5b44a63a449"
+      },
+      "cell_type": "code",
+      "source": [
+        "from sklearn.neural_network.MLPClassifier"
+      ],
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "SyntaxError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;36m  File \u001b[0;32m\"<ipython-input-1-ccd6d69a7dfc>\"\u001b[0;36m, line \u001b[0;32m1\u001b[0m\n\u001b[0;31m    from sklearn.neural_network.MLPClassifier\u001b[0m\n\u001b[0m                                             ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m invalid syntax\n"
+          ]
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "id": "jjbUCj-N_4mV",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "from sklearn.neural_network import MLPClassifier"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "4dLRtSeiACQm",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "X = [[0., 0.], [1., 1.]]"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "YER5CQFfAQet",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "y = [0, 1]"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "XtvLHHi6ASs5",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "clf = MLPClassifier(hidden_layer_sizes=(2), solver='lbfgs')"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "Tfm67p4pAfhn",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 139
+        },
+        "outputId": "3e0f9992-8ddd-4f7c-d70a-3b7828a7ae09"
+      },
+      "cell_type": "code",
+      "source": [
+        "clf.fit(X, y)"
+      ],
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "MLPClassifier(activation='relu', alpha=0.0001, batch_size='auto', beta_1=0.9,\n",
+              "       beta_2=0.999, early_stopping=False, epsilon=1e-08,\n",
+              "       hidden_layer_sizes=2, learning_rate='constant',\n",
+              "       learning_rate_init=0.001, max_iter=200, momentum=0.9,\n",
+              "       nesterovs_momentum=True, power_t=0.5, random_state=None,\n",
+              "       shuffle=True, solver='lbfgs', tol=0.0001, validation_fraction=0.1,\n",
+              "       verbose=False, warm_start=False)"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 6
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "id": "VeSrWAFXBNaM",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "outputId": "370da55e-b39d-4839-a59c-ad5c12b45143"
+      },
+      "cell_type": "code",
+      "source": [
+        "clf.predict([[2., 2.],[-1., -2.]])"
+      ],
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([1, 0])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 7
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "id": "zVvoNcNKBmOS",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "X = [[0., 0.], [0., 1.], [1., 0.], [1., 1.]]"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "AbkDEiLmCChj",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "y = [0., 1., 1., 0.]"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "mnPVTl1uCOW-",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "clf = MLPClassifier(hidden_layer_sizes=(5, 2))"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "S1yvop-5CcIs",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 409
+        },
+        "outputId": "413cb955-1c0c-4f3c-bb1e-6cbbafb4ca4a"
+      },
+      "cell_type": "code",
+      "source": [
+        "clf.predict(X)\n"
+      ],
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "NotFittedError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mNotFittedError\u001b[0m                            Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-11-e7c45e9f8b2f>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mclf\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mpredict\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mX\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;32m/usr/local/lib/python3.6/dist-packages/sklearn/neural_network/multilayer_perceptron.py\u001b[0m in \u001b[0;36mpredict\u001b[0;34m(self, X)\u001b[0m\n\u001b[1;32m    946\u001b[0m             \u001b[0mThe\u001b[0m \u001b[0mpredicted\u001b[0m \u001b[0mclasses\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    947\u001b[0m         \"\"\"\n\u001b[0;32m--> 948\u001b[0;31m         \u001b[0mcheck_is_fitted\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m\"coefs_\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    949\u001b[0m         \u001b[0my_pred\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_predict\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mX\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    950\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.6/dist-packages/sklearn/utils/validation.py\u001b[0m in \u001b[0;36mcheck_is_fitted\u001b[0;34m(estimator, attributes, msg, all_or_any)\u001b[0m\n\u001b[1;32m    766\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    767\u001b[0m     \u001b[0;32mif\u001b[0m \u001b[0;32mnot\u001b[0m \u001b[0mall_or_any\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0mhasattr\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mestimator\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mattr\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;32mfor\u001b[0m \u001b[0mattr\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mattributes\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 768\u001b[0;31m         \u001b[0;32mraise\u001b[0m \u001b[0mNotFittedError\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mmsg\u001b[0m \u001b[0;34m%\u001b[0m \u001b[0;34m{\u001b[0m\u001b[0;34m'name'\u001b[0m\u001b[0;34m:\u001b[0m \u001b[0mtype\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mestimator\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m__name__\u001b[0m\u001b[0;34m}\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    769\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    770\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mNotFittedError\u001b[0m: This MLPClassifier instance is not fitted yet. Call 'fit' with appropriate arguments before using this method."
+          ]
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "id": "NFBnR4v1Cd7R",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 139
+        },
+        "outputId": "38492fd8-0281-41a0-86ba-370a8fda206e"
+      },
+      "cell_type": "code",
+      "source": [
+        "clf.fit(X, y)"
+      ],
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "MLPClassifier(activation='relu', alpha=0.0001, batch_size='auto', beta_1=0.9,\n",
+              "       beta_2=0.999, early_stopping=False, epsilon=1e-08,\n",
+              "       hidden_layer_sizes=(5, 2), learning_rate='constant',\n",
+              "       learning_rate_init=0.001, max_iter=200, momentum=0.9,\n",
+              "       nesterovs_momentum=True, power_t=0.5, random_state=None,\n",
+              "       shuffle=True, solver='adam', tol=0.0001, validation_fraction=0.1,\n",
+              "       verbose=False, warm_start=False)"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 12
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "id": "SgHL6PqbCmkj",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "outputId": "a6a7f246-ffc0-48e7-d0d6-d7703696d22e"
+      },
+      "cell_type": "code",
+      "source": [
+        "clf.predict(X)"
+      ],
+      "execution_count": 13,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([0., 0., 0., 0.])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 13
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "id": "I7zq6s0gCoaT",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "clf = MLPClassifier(hidden_layer_sizes=(2), solver='lbfgs', max_iter=500, early_stopping=True, random_state=6, learning_rate='adaptive')"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "7U-5BtDcCvtj",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 139
+        },
+        "outputId": "6b2b4cab-4f8a-48c5-ab65-386aa8649597"
+      },
+      "cell_type": "code",
+      "source": [
+        "clf.fit(X, y)"
+      ],
+      "execution_count": 49,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "MLPClassifier(activation='relu', alpha=0.0001, batch_size='auto', beta_1=0.9,\n",
+              "       beta_2=0.999, early_stopping=True, epsilon=1e-08,\n",
+              "       hidden_layer_sizes=2, learning_rate='adaptive',\n",
+              "       learning_rate_init=0.001, max_iter=500, momentum=0.9,\n",
+              "       nesterovs_momentum=True, power_t=0.5, random_state=6, shuffle=True,\n",
+              "       solver='lbfgs', tol=0.0001, validation_fraction=0.1, verbose=False,\n",
+              "       warm_start=False)"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 49
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "id": "QdUZZf6ADBHO",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "outputId": "69218fd2-8424-4bf9-b22c-be9c3e008266"
+      },
+      "cell_type": "code",
+      "source": [
+        "clf.predict(X)"
+      ],
+      "execution_count": 50,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([0., 1., 1., 0.])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 50
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "id": "1YMw4EtWDDLw",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "from sklearn.datasets import load_breast_cancer"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "eSANaJHjGKKe",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "from pandas.plotting import scatter_matrix"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "-GrAfWxzGYhF",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "cancer = load_breast_cancer()\n"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "EebrRRjxGbql",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "outputId": "45a48414-f09c-4a61-d29d-9750ed64db41"
+      },
+      "cell_type": "code",
+      "source": [
+        "cancer.keys()"
+      ],
+      "execution_count": 54,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "dict_keys(['data', 'target', 'target_names', 'DESCR', 'feature_names'])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 54
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "id": "ghg1TD5EGdSb",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "outputId": "8f0fae1e-5278-4031-fb52-20a78cfff9d8"
+      },
+      "cell_type": "code",
+      "source": [
+        "cancer['data'].shape"
+      ],
+      "execution_count": 55,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(569, 30)"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 55
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "id": "nZKM2L90GfXa",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "import pandas as pd"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "bJ19r1qKGhSt",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "df = pd.DataFrame(cancer.data, columns=cancer.feature_names)"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "R9aBAZEgGi-z",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 378
+        },
+        "outputId": "b57ee427-b70f-48b3-c5b6-8956836f2cbe"
+      },
+      "cell_type": "code",
+      "source": [
+        "df.describe()"
+      ],
+      "execution_count": 58,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>mean radius</th>\n",
+              "      <th>mean texture</th>\n",
+              "      <th>mean perimeter</th>\n",
+              "      <th>mean area</th>\n",
+              "      <th>mean smoothness</th>\n",
+              "      <th>mean compactness</th>\n",
+              "      <th>mean concavity</th>\n",
+              "      <th>mean concave points</th>\n",
+              "      <th>mean symmetry</th>\n",
+              "      <th>mean fractal dimension</th>\n",
+              "      <th>...</th>\n",
+              "      <th>worst radius</th>\n",
+              "      <th>worst texture</th>\n",
+              "      <th>worst perimeter</th>\n",
+              "      <th>worst area</th>\n",
+              "      <th>worst smoothness</th>\n",
+              "      <th>worst compactness</th>\n",
+              "      <th>worst concavity</th>\n",
+              "      <th>worst concave points</th>\n",
+              "      <th>worst symmetry</th>\n",
+              "      <th>worst fractal dimension</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>count</th>\n",
+              "      <td>569.000000</td>\n",
+              "      <td>569.000000</td>\n",
+              "      <td>569.000000</td>\n",
+              "      <td>569.000000</td>\n",
+              "      <td>569.000000</td>\n",
+              "      <td>569.000000</td>\n",
+              "      <td>569.000000</td>\n",
+              "      <td>569.000000</td>\n",
+              "      <td>569.000000</td>\n",
+              "      <td>569.000000</td>\n",
+              "      <td>...</td>\n",
+              "      <td>569.000000</td>\n",
+              "      <td>569.000000</td>\n",
+              "      <td>569.000000</td>\n",
+              "      <td>569.000000</td>\n",
+              "      <td>569.000000</td>\n",
+              "      <td>569.000000</td>\n",
+              "      <td>569.000000</td>\n",
+              "      <td>569.000000</td>\n",
+              "      <td>569.000000</td>\n",
+              "      <td>569.000000</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>mean</th>\n",
+              "      <td>14.127292</td>\n",
+              "      <td>19.289649</td>\n",
+              "      <td>91.969033</td>\n",
+              "      <td>654.889104</td>\n",
+              "      <td>0.096360</td>\n",
+              "      <td>0.104341</td>\n",
+              "      <td>0.088799</td>\n",
+              "      <td>0.048919</td>\n",
+              "      <td>0.181162</td>\n",
+              "      <td>0.062798</td>\n",
+              "      <td>...</td>\n",
+              "      <td>16.269190</td>\n",
+              "      <td>25.677223</td>\n",
+              "      <td>107.261213</td>\n",
+              "      <td>880.583128</td>\n",
+              "      <td>0.132369</td>\n",
+              "      <td>0.254265</td>\n",
+              "      <td>0.272188</td>\n",
+              "      <td>0.114606</td>\n",
+              "      <td>0.290076</td>\n",
+              "      <td>0.083946</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>std</th>\n",
+              "      <td>3.524049</td>\n",
+              "      <td>4.301036</td>\n",
+              "      <td>24.298981</td>\n",
+              "      <td>351.914129</td>\n",
+              "      <td>0.014064</td>\n",
+              "      <td>0.052813</td>\n",
+              "      <td>0.079720</td>\n",
+              "      <td>0.038803</td>\n",
+              "      <td>0.027414</td>\n",
+              "      <td>0.007060</td>\n",
+              "      <td>...</td>\n",
+              "      <td>4.833242</td>\n",
+              "      <td>6.146258</td>\n",
+              "      <td>33.602542</td>\n",
+              "      <td>569.356993</td>\n",
+              "      <td>0.022832</td>\n",
+              "      <td>0.157336</td>\n",
+              "      <td>0.208624</td>\n",
+              "      <td>0.065732</td>\n",
+              "      <td>0.061867</td>\n",
+              "      <td>0.018061</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>min</th>\n",
+              "      <td>6.981000</td>\n",
+              "      <td>9.710000</td>\n",
+              "      <td>43.790000</td>\n",
+              "      <td>143.500000</td>\n",
+              "      <td>0.052630</td>\n",
+              "      <td>0.019380</td>\n",
+              "      <td>0.000000</td>\n",
+              "      <td>0.000000</td>\n",
+              "      <td>0.106000</td>\n",
+              "      <td>0.049960</td>\n",
+              "      <td>...</td>\n",
+              "      <td>7.930000</td>\n",
+              "      <td>12.020000</td>\n",
+              "      <td>50.410000</td>\n",
+              "      <td>185.200000</td>\n",
+              "      <td>0.071170</td>\n",
+              "      <td>0.027290</td>\n",
+              "      <td>0.000000</td>\n",
+              "      <td>0.000000</td>\n",
+              "      <td>0.156500</td>\n",
+              "      <td>0.055040</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>25%</th>\n",
+              "      <td>11.700000</td>\n",
+              "      <td>16.170000</td>\n",
+              "      <td>75.170000</td>\n",
+              "      <td>420.300000</td>\n",
+              "      <td>0.086370</td>\n",
+              "      <td>0.064920</td>\n",
+              "      <td>0.029560</td>\n",
+              "      <td>0.020310</td>\n",
+              "      <td>0.161900</td>\n",
+              "      <td>0.057700</td>\n",
+              "      <td>...</td>\n",
+              "      <td>13.010000</td>\n",
+              "      <td>21.080000</td>\n",
+              "      <td>84.110000</td>\n",
+              "      <td>515.300000</td>\n",
+              "      <td>0.116600</td>\n",
+              "      <td>0.147200</td>\n",
+              "      <td>0.114500</td>\n",
+              "      <td>0.064930</td>\n",
+              "      <td>0.250400</td>\n",
+              "      <td>0.071460</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>50%</th>\n",
+              "      <td>13.370000</td>\n",
+              "      <td>18.840000</td>\n",
+              "      <td>86.240000</td>\n",
+              "      <td>551.100000</td>\n",
+              "      <td>0.095870</td>\n",
+              "      <td>0.092630</td>\n",
+              "      <td>0.061540</td>\n",
+              "      <td>0.033500</td>\n",
+              "      <td>0.179200</td>\n",
+              "      <td>0.061540</td>\n",
+              "      <td>...</td>\n",
+              "      <td>14.970000</td>\n",
+              "      <td>25.410000</td>\n",
+              "      <td>97.660000</td>\n",
+              "      <td>686.500000</td>\n",
+              "      <td>0.131300</td>\n",
+              "      <td>0.211900</td>\n",
+              "      <td>0.226700</td>\n",
+              "      <td>0.099930</td>\n",
+              "      <td>0.282200</td>\n",
+              "      <td>0.080040</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>75%</th>\n",
+              "      <td>15.780000</td>\n",
+              "      <td>21.800000</td>\n",
+              "      <td>104.100000</td>\n",
+              "      <td>782.700000</td>\n",
+              "      <td>0.105300</td>\n",
+              "      <td>0.130400</td>\n",
+              "      <td>0.130700</td>\n",
+              "      <td>0.074000</td>\n",
+              "      <td>0.195700</td>\n",
+              "      <td>0.066120</td>\n",
+              "      <td>...</td>\n",
+              "      <td>18.790000</td>\n",
+              "      <td>29.720000</td>\n",
+              "      <td>125.400000</td>\n",
+              "      <td>1084.000000</td>\n",
+              "      <td>0.146000</td>\n",
+              "      <td>0.339100</td>\n",
+              "      <td>0.382900</td>\n",
+              "      <td>0.161400</td>\n",
+              "      <td>0.317900</td>\n",
+              "      <td>0.092080</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>max</th>\n",
+              "      <td>28.110000</td>\n",
+              "      <td>39.280000</td>\n",
+              "      <td>188.500000</td>\n",
+              "      <td>2501.000000</td>\n",
+              "      <td>0.163400</td>\n",
+              "      <td>0.345400</td>\n",
+              "      <td>0.426800</td>\n",
+              "      <td>0.201200</td>\n",
+              "      <td>0.304000</td>\n",
+              "      <td>0.097440</td>\n",
+              "      <td>...</td>\n",
+              "      <td>36.040000</td>\n",
+              "      <td>49.540000</td>\n",
+              "      <td>251.200000</td>\n",
+              "      <td>4254.000000</td>\n",
+              "      <td>0.222600</td>\n",
+              "      <td>1.058000</td>\n",
+              "      <td>1.252000</td>\n",
+              "      <td>0.291000</td>\n",
+              "      <td>0.663800</td>\n",
+              "      <td>0.207500</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "<p>8 rows × 30 columns</p>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "       mean radius  mean texture  mean perimeter    mean area  \\\n",
+              "count   569.000000    569.000000      569.000000   569.000000   \n",
+              "mean     14.127292     19.289649       91.969033   654.889104   \n",
+              "std       3.524049      4.301036       24.298981   351.914129   \n",
+              "min       6.981000      9.710000       43.790000   143.500000   \n",
+              "25%      11.700000     16.170000       75.170000   420.300000   \n",
+              "50%      13.370000     18.840000       86.240000   551.100000   \n",
+              "75%      15.780000     21.800000      104.100000   782.700000   \n",
+              "max      28.110000     39.280000      188.500000  2501.000000   \n",
+              "\n",
+              "       mean smoothness  mean compactness  mean concavity  mean concave points  \\\n",
+              "count       569.000000        569.000000      569.000000           569.000000   \n",
+              "mean          0.096360          0.104341        0.088799             0.048919   \n",
+              "std           0.014064          0.052813        0.079720             0.038803   \n",
+              "min           0.052630          0.019380        0.000000             0.000000   \n",
+              "25%           0.086370          0.064920        0.029560             0.020310   \n",
+              "50%           0.095870          0.092630        0.061540             0.033500   \n",
+              "75%           0.105300          0.130400        0.130700             0.074000   \n",
+              "max           0.163400          0.345400        0.426800             0.201200   \n",
+              "\n",
+              "       mean symmetry  mean fractal dimension           ...             \\\n",
+              "count     569.000000              569.000000           ...              \n",
+              "mean        0.181162                0.062798           ...              \n",
+              "std         0.027414                0.007060           ...              \n",
+              "min         0.106000                0.049960           ...              \n",
+              "25%         0.161900                0.057700           ...              \n",
+              "50%         0.179200                0.061540           ...              \n",
+              "75%         0.195700                0.066120           ...              \n",
+              "max         0.304000                0.097440           ...              \n",
+              "\n",
+              "       worst radius  worst texture  worst perimeter   worst area  \\\n",
+              "count    569.000000     569.000000       569.000000   569.000000   \n",
+              "mean      16.269190      25.677223       107.261213   880.583128   \n",
+              "std        4.833242       6.146258        33.602542   569.356993   \n",
+              "min        7.930000      12.020000        50.410000   185.200000   \n",
+              "25%       13.010000      21.080000        84.110000   515.300000   \n",
+              "50%       14.970000      25.410000        97.660000   686.500000   \n",
+              "75%       18.790000      29.720000       125.400000  1084.000000   \n",
+              "max       36.040000      49.540000       251.200000  4254.000000   \n",
+              "\n",
+              "       worst smoothness  worst compactness  worst concavity  \\\n",
+              "count        569.000000         569.000000       569.000000   \n",
+              "mean           0.132369           0.254265         0.272188   \n",
+              "std            0.022832           0.157336         0.208624   \n",
+              "min            0.071170           0.027290         0.000000   \n",
+              "25%            0.116600           0.147200         0.114500   \n",
+              "50%            0.131300           0.211900         0.226700   \n",
+              "75%            0.146000           0.339100         0.382900   \n",
+              "max            0.222600           1.058000         1.252000   \n",
+              "\n",
+              "       worst concave points  worst symmetry  worst fractal dimension  \n",
+              "count            569.000000      569.000000               569.000000  \n",
+              "mean               0.114606        0.290076                 0.083946  \n",
+              "std                0.065732        0.061867                 0.018061  \n",
+              "min                0.000000        0.156500                 0.055040  \n",
+              "25%                0.064930        0.250400                 0.071460  \n",
+              "50%                0.099930        0.282200                 0.080040  \n",
+              "75%                0.161400        0.317900                 0.092080  \n",
+              "max                0.291000        0.663800                 0.207500  \n",
+              "\n",
+              "[8 rows x 30 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 58
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "id": "YHj3I6ZsGk6K",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 367
+        },
+        "outputId": "c395e408-63e9-44b6-c761-1f4b64bb15c4"
+      },
+      "cell_type": "code",
+      "source": [
+        "%matplotlib inline\n",
+        "import matplotlib\n",
+        "import numpy as np\n",
+        "import matplotlib.pyplot as plt\n",
+        "# histogram of some selected features\n",
+        "df.iloc[:, 5:8].hist()"
+      ],
+      "execution_count": 59,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[<matplotlib.axes._subplots.AxesSubplot object at 0x7fae529ab7b8>,\n",
+              "        <matplotlib.axes._subplots.AxesSubplot object at 0x7fae5297dd68>],\n",
+              "       [<matplotlib.axes._subplots.AxesSubplot object at 0x7fae52938e48>,\n",
+              "        <matplotlib.axes._subplots.AxesSubplot object at 0x7fae528f2f28>]],\n",
+              "      dtype=object)"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 59
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "image/png": "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\nAABJRU5ErkJggg==\n",
+            "text/plain": [
+              "<matplotlib.figure.Figure at 0x7fae529e8ba8>"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "id": "9dnJAkKNGs_0",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": []
+    }
+  ]
+}
